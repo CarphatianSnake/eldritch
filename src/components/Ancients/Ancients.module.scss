@@ -1,0 +1,25 @@
+.ancientsContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin: 30px auto;
+  max-width: 1200px;
+}
+
+.ancientCard {
+  border: 2px solid transparent;
+  &:hover {
+    border: 2px solid #FFF;
+  }
+}
+
+.active {
+  border: 2px solid #FFF;
+}
+
+.cardFace {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
