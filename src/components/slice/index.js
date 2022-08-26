@@ -96,15 +96,7 @@ export const slice = createSlice({
     },
     getCurrentCard(state) {
       state.currentCard = state.mixedCards.shift()
-    },
-    clearData(state) {
-      state.ancient = {}
-      state.currentCard = {}
-      state.cardsCount = {}
-      state.mixedCards = []
-      state.difficulty = 'normal'
-    },
-    updateStatus(state) {
+
       const findColor = (stage) => {
         switch (state.currentCard.color) {
           case 'green':
@@ -131,11 +123,25 @@ export const slice = createSlice({
           break
         default: {}
       }
+
+    },
+    clearData(state) {
+      state.ancient = {}
+      state.currentCard = {}
+      state.cardsCount = {}
+      state.mixedCards = []
+      state.difficulty = 'normal'
     }
   }
 })
 
 const {reducer, actions} = slice
 
-export const { getAncient, getDifficulty, onMixCards, getCurrentCard, clearData, updateStatus } = actions
+export const {
+  getAncient,
+  getDifficulty,
+  onMixCards,
+  getCurrentCard,
+  clearData
+} = actions
 export default reducer

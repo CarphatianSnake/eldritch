@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux/es/exports'
 
 import styles from './Cards.module.scss'
 
-import { getCurrentCard, updateStatus } from '../slice'
+import { getCurrentCard } from '../slice'
 
 import cardBackground from '../../assets/mythicCardBackground.png'
 
@@ -16,7 +16,6 @@ const Cards = () => {
 
   const onCardShow = () => {
     dispatch(getCurrentCard())
-    dispatch(updateStatus())
   }
 
   const cardBack = <img onClick={onCardShow} className={styles.cardsBack} src={cardBackground} alt="Card Background" />
