@@ -1,0 +1,30 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.cardsBack, .cardFace {
+  height: 300px;
+  margin: 0 auto;
+}
+
+.cardsBack {
+  transition: transform 250ms ease;
+  
+  &:active {
+    transform: scale(1.1);
+  }
+}
+
+.cardFace {
+  animation-name: showCard;
+  animation-duration: 250ms;
+  animation-timing-function: ease;
+}
+
+@keyframes showCard {
+  0%   {transform: scale(0.9)}
+  50% {transform: scale(1.1)}
+  100% {transform: scale(1)}
+}

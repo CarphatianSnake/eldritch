@@ -4,9 +4,13 @@ import styles from './Ancients.module.scss'
 
 const Ancients = () => {
   return (
-    <div className={styles.ancientsContainer}>
-      <Ancient />
-    </div>
+    <>
+      <h2>Choose your Ancient</h2>
+      <div className={styles.ancientsContainer}>
+        <Ancient />
+      </div>
+    </>
+    
   )
 }
 

@@ -5,7 +5,7 @@ import styles from './Ancients.module.scss'
 
 import ancientsData from '../../data/ancients'
 
-import { getAncient } from './ancientsSlice'
+import { getAncient, onMixCards, clearData } from '../slice'
 
 const Ancient = () => {
 
@@ -13,9 +13,11 @@ const Ancient = () => {
   const dispatch = useDispatch()
 
   const onChoose = (e) => {
+    dispatch(clearData())
     setActiveAncient(e.target.alt)
     const ancient = ancientsData.filter(item => item.id === e.target.alt)[0]
     dispatch(getAncient(ancient))
+    dispatch(onMixCards())
   }
 
   const ancients = ancientsData.map(item => {

@@ -10,8 +10,10 @@ const MainPage = () => {
     <main className={styles.container}>
       <Ancients />
       <Difficulties />
-      <StatusBar />
-      <Cards />
+      <div className={styles.game}>
+        <StatusBar />
+        <Cards />
+      </div>
     </main>
   )
 }

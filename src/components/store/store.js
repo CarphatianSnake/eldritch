@@ -1,10 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit"
 
-import ancientsSlice from "../Ancients/ancientsSlice"
-import difficultiesSlice from '../Difficulties/difficultiesSlice'
+import slice from '../slice'
 
 const store = configureStore({
-  reducer: { ancientsSlice, difficultiesSlice },
+  reducer: { slice },
   devTools: process.env.NODE_ENV !== 'production'
 })
 
