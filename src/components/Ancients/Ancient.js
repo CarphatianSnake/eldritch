@@ -14,8 +14,9 @@ const Ancient = () => {
 
   const onChoose = (e) => {
     dispatch(clearData())
-    setActiveAncient(e.target.alt)
-    const ancient = ancientsData.filter(item => item.id === e.target.alt)[0]
+    console.log(e.target.dataset.id);
+    setActiveAncient(e.target.dataset.id)
+    const ancient = ancientsData.filter(item => item.id === e.target.dataset.id)[0]
     dispatch(getAncient(ancient))
     dispatch(onMixCards())
   }
@@ -25,7 +26,7 @@ const Ancient = () => {
     
     return (
       <div onClick={(e) => {onChoose(e)}} className={_class} key={item.id}>
-        <img className={styles.cardFace} src={item.cardFace} alt={item.name} />
+        <img className={styles.cardFace} src={item.cardFace} alt={item.name} data-id={item.id} />
       </div>
     )
   })

@@ -26,6 +26,7 @@ const StatusBar = () => {
           return takeNumber(secondStage)
         case 'third':
           return takeNumber(thirdStage)
+        default: {}
       }
     }
 

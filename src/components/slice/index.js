@@ -9,7 +9,7 @@ const initialState = {
   currentCard: {},
   cardsCount: {},
   mixedCards: [],
-  difficulty: 'normal'
+  difficulty: ''
 }
 
 export const slice = createSlice({
@@ -20,8 +20,21 @@ export const slice = createSlice({
       state.ancient = payload
     },
     onMixCards(state) {
+      
+      // eslint-disable-next-line
+      if (state.difficulty === '' || state.ancient == {}) {
+        return
+      }
 
       const { firstStage, secondStage, thirdStage } = state.ancient
+
+      const countCards = (color) => firstStage[color] + secondStage[color] + thirdStage[color]
+
+      const cardsCount = {
+        greenCards: countCards('greenCards'),
+        brownCards: countCards('brownCards'),
+        blueCards: countCards('blueCards')
+      }
 
       const mixedCards = { greenCards, brownCards, blueCards }
 
@@ -31,17 +44,9 @@ export const slice = createSlice({
         thirdStage: []
       }
 
-      const countCards = (color) => firstStage[color] + secondStage[color] + thirdStage[color]
-
       const mixCards = (data, cardsCount) => shuffle(data)
           .slice(0, cardsCount)
           .filter((item, i) => i < cardsCount)
-
-      const cardsCount = {
-        greenCards: countCards('greenCards'),
-        brownCards: countCards('brownCards'),
-        blueCards: countCards('blueCards')
-      }
 
       for (let color in mixedCards) {
         switch (color) {
@@ -130,7 +135,6 @@ export const slice = createSlice({
       state.currentCard = {}
       state.cardsCount = {}
       state.mixedCards = []
-      state.difficulty = 'normal'
     }
   }
 })
