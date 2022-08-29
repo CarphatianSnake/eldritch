@@ -18,9 +18,9 @@ const Cards = () => {
     dispatch(getCurrentCard())
   }
 
-  const cardBack = <img onClick={onCardShow} className={styles.cardsBack} src={cardBackground} alt="Card Background" />
+  const cardBack = <img loading="lazy" onClick={onCardShow} className={styles.cardsBack} src={cardBackground} alt="Card Background" />
 
-  const showCard = <img className={styles.cardFace} src={currentCard.cardFace} alt="Current Card" />
+  const showCard = <img loading="lazy" className={styles.cardFace} src={currentCard.cardFace} alt="Current Card" />
 
   return (
     <div className={styles.container}>
