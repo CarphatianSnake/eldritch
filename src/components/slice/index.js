@@ -92,21 +92,6 @@ export const slice = createSlice({
         }
       }
 
-      // for (let color in mixedCards) {
-      //   switch (color) {
-      //     case 'greenCards':
-      //       mixedCards[color] = mixCards(greenCards, cardsCount[color])
-      //       break
-      //     case 'brownCards':
-      //       mixedCards[color] = mixCards(brownCards, cardsCount[color])
-      //       break
-      //     case 'blueCards':
-      //       mixedCards[color] = mixCards(blueCards, cardsCount[color])
-      //       break
-      //     default: {}
-      //   }
-      // }
-
       for (let stage in { firstStage, secondStage, thirdStage }) {
         switch (stage) {
           case 'firstStage':
