@@ -14,7 +14,6 @@ const Ancient = () => {
 
   const onChoose = (e) => {
     dispatch(clearData())
-    console.log(e.target.dataset.id);
     setActiveAncient(e.target.dataset.id)
     const ancient = ancientsData.filter(item => item.id === e.target.dataset.id)[0]
     dispatch(getAncient(ancient))

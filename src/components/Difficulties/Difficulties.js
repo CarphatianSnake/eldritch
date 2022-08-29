@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux/es/exports'
 
 import styles from './Difficulties.module.scss'
 
-import { getDifficulty, onMixCards } from '../slice'
+import { getDifficulty, onMixCards, clearData } from '../slice'
 
 const Difficulties = () => {
 
@@ -15,6 +15,7 @@ const Difficulties = () => {
   })
 
   const onChoose = (e) => {
+    dispatch(clearData())
     dispatch(getDifficulty(e.target.textContent))
     dispatch(onMixCards())
   }
